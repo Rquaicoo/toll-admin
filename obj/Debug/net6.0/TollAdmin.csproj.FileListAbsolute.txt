@@ -1,0 +1,15 @@
+C:\Users\Russell\source\repos\Toll\TollAdmin\bin\Debug\net6.0\TollAdmin.exe
+C:\Users\Russell\source\repos\Toll\TollAdmin\bin\Debug\net6.0\TollAdmin.deps.json
+C:\Users\Russell\source\repos\Toll\TollAdmin\bin\Debug\net6.0\TollAdmin.runtimeconfig.json
+C:\Users\Russell\source\repos\Toll\TollAdmin\bin\Debug\net6.0\TollAdmin.dll
+C:\Users\Russell\source\repos\Toll\TollAdmin\bin\Debug\net6.0\TollAdmin.pdb
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.csproj.AssemblyReference.cache
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.AssemblyInfoInputs.cache
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.AssemblyInfo.cs
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.csproj.CoreCompileInputs.cache
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.dll
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\refint\TollAdmin.dll
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.pdb
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\TollAdmin.genruntimeconfig.cache
+C:\Users\Russell\source\repos\Toll\TollAdmin\obj\Debug\net6.0\ref\TollAdmin.dll
