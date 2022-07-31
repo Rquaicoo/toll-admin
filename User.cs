@@ -18,10 +18,9 @@ namespace TollAdmin
         private string role;
         private DateTime dob;
 
-        private User(int id, string name, string dob, string role, string email, string phone, string gender)
+        private User(string name, string dob, string role, string email, string phone, string gender)
         {
             this.name = name;
-            this.id = id;
             this.email = email;
             this.dob = DateTime.Parse(dob);
             this.role = role;
@@ -35,32 +34,47 @@ namespace TollAdmin
         {   
             string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-            char[] passwordArray = new char[6];
+            char[] passwordArray = new char[8];
             var random = new Random();
+
+            for (int i = 0; i < passwordArray.Length; i++)
+                {
+                    passwordArray[i] = characters[random.Next(characters.Length)];
+                }
+
+            var password = new String(passwordArray);
 
             return password;
         }
 
         private int create()
         {
-            Console.WriteLine("Hello World");
-
             //connect to database
+            string connectionCode = "server=russell;database=toll;uid=root;pwd=1Russell";
+            MySqlConnection connection = new MySqlConnection(connectionCode);
+            connection.Open();
 
             try
             {
-                string connectionCode = "server=russell;database=toll;uid=root;pwd=1Russell";
+                string password = generatePassword();
 
-                MySqlConnection connection = new MySqlConnection(connectionCode);
-                connection.Open();
+                string statement = $"INSERT INTO `users`(`name`,`email`,`dob`,`role`,`phone`,`gender`,`password`) VALUES ('{this.name}','{this.email}','{this.dob}',''{this.role}','{this.phone}','{this.gender}','{this.password}')";
 
-                string statement = $"INSERT INTO `users`( )";
+                MySqlCommand command = new MySqlCommand(statement, connection);
+                command.ExecuteNonQuery();
+
+                Console.WriteLine("User " + this.name + " successfully created");
                
             }
 
             catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
+            }
+
+            finally
+            {
+                connection.Close();
             }
             return 0;
         }
