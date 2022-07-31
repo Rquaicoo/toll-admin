@@ -58,7 +58,7 @@ namespace TollAdmin
             {
                 string password = generatePassword();
 
-                string statement = $"INSERT INTO `users`(`name`,`email`,`dob`,`role`,`phone`,`gender`,`password`) VALUES ('{this.name}','{this.email}','{this.dob}',''{this.role}','{this.phone}','{this.gender}','{this.password}')";
+                string statement = $"INSERT INTO users(name,email,dob,role,phone,gender,password) VALUES ('{this.name}','{this.email}','{this.dob}',''{this.role}','{this.phone}','{this.gender}','{this.password}')";
 
                 MySqlCommand command = new MySqlCommand(statement, connection);
                 command.ExecuteNonQuery();
@@ -79,6 +79,30 @@ namespace TollAdmin
             return 0;
         }
 
+        private void get (string id)
+        
+        {
+            //connect to database
+            string connectionCode = "server=russell;database=toll;uid=root;pwd=1Russell";
+            MySqlConnection connection = new MySqlConnection(connectionCode);
+            connection.Open();
+
+            try
+            {
+                string statement = $"SELECT * FROM `users` WHERE id='{this.id}'";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+            
+        }
+
         private int delete(string id)
         {
             return 1;
@@ -89,10 +113,7 @@ namespace TollAdmin
             return 1;
         }
 
-        private void get (string id)
-        {
-            
-        }
+        
         
         
     }
