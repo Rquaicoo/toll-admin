@@ -20,8 +20,7 @@ namespace TollAdmin
             switch (selection)
             {
                 case 1:
-                    Console.WriteLine("Input the name of the user");
-                    string name = Console.ReadLine();
+                    createUser();
                     break;
                 case 2:
                     Console.WriteLine("Hello World");
@@ -36,6 +35,67 @@ namespace TollAdmin
 
 
                 
+
+        }
+
+        private void createUser()
+        {
+            string role = "";
+            string gender = "";
+
+            Console.WriteLine("Input the name of the user");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Input  username for " + name);
+            string username = Console.ReadLine();
+
+            Console.WriteLine("Input the phone number of " + name + " (eg. 024xxxxxxx)");
+            string phone = Console.ReadLine();
+
+            Console.WriteLine("Input the date of birth of " + name + " (format: dd-mm-yyyy");
+            string dob = Console.ReadLine();
+
+            Console.Writeline("Select the number corresponding to the role of the user" +
+                "\n1. Admin  2. Supervisor  3. Attendant");
+
+            int roleSelection = Convert.ToInt32(Console.ReadLine());
+
+            switch (roleSelection)
+            {
+                case 1:
+                    role = "admin";
+                    break;
+                case 2:
+                    role = "supervisor";
+                    break;
+                case 3:
+                    role = "attendant";
+                    break;
+
+            }
+
+            Console.WriteLine("Select the number corresponding to the gender of " + name);
+            int genderSelection = Console.ReadLine();
+
+            switch (genderSelection)
+            {
+                case 1:
+                    gender = "male";
+                    break;
+                case 2:
+                    gender = "female";
+                    break;
+
+            }
+
+            User user = new User();
+            user.name = name;
+            user.phone = phone;
+            user.gender = gender;
+            user.username = username;
+            user.role = role;
+            user.dob = dob;
+
 
         }
     }
