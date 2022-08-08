@@ -9,14 +9,14 @@ namespace TollAdmin
 {
     internal class User
     {
-        private int id;
+        private string username;
         private string name;
         private string email;
         private string password;
         private string phone;
         private string gender;
         private string role;
-        private DateTime dob;
+        private date dob;
 
         private User(string name, string dob, string role, string email, string phone, string gender)
         {
@@ -26,7 +26,6 @@ namespace TollAdmin
             this.role = role;
             this.phone = phone;
             this.gender = gender;
-            this.password = "";
 
         }
 
@@ -56,9 +55,9 @@ namespace TollAdmin
 
             try
             {
-                string password = generatePassword();
+                this.password = generatePassword();
 
-                string statement = $"INSERT INTO users(name,email,dob,role,phone,gender,password) VALUES ('{this.name}','{this.email}','{this.dob}',''{this.role}','{this.phone}','{this.gender}','{this.password}')";
+                string statement = $"INSERT INTO users(username,name,email,dob,role,phone,gender,password) VALUES ('{this.username}','{this.name}','{this.email}','{this.dob}',''{this.role}','{this.phone}','{this.gender}','{this.password}')";
 
                 MySqlCommand command = new MySqlCommand(statement, connection);
                 command.ExecuteNonQuery();
